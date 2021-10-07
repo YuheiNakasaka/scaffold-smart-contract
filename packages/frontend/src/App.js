@@ -1,11 +1,9 @@
 import "./App.css";
-import { useState } from "react";
 import { ethers } from "ethers";
-import Greeter from "./contracts/hardhat_contracts.json";
+import MyNetwork from "./contracts/contract-address.json";
+import Greeter from "./contracts/hardhat-contracts.json";
 
 function App() {
-  const [buying, buy] = useState();
-
   async function requestAccount() {
     await window.ethereum.request({ method: "eth_requestAccounts" });
   }
@@ -13,11 +11,9 @@ function App() {
   async function greeting() {
     if (typeof window.ethereum !== "undefined") {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
-      // 31337 is the contract in localhost
-      const greeter = Greeter[31337].localhost.contracts.Greeter;
       const contract = new ethers.Contract(
-        greeter.address,
-        greeter.abi,
+        MyNetwork.address,
+        Greeter.abi,
         provider
       );
       try {
@@ -33,6 +29,7 @@ function App() {
     <div className="App">
       <header className="App-Header">
         <button onClick={greeting}>Greeting</button>
+        <button onClick={requestAccount}>Connect</button>
       </header>
     </div>
   );

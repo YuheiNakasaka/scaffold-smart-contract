@@ -22,4 +22,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-src/contracts/hardhat_contracts.json
+src/contracts/contract-address.json
+src/contracts/hardhat-contracts.json

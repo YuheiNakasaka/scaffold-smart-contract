@@ -1,5 +1,6 @@
 require("@nomiclabs/hardhat-waffle");
 require("hardhat-deploy");
+require("./tasks/faucet");
 
 const privateKey =
   process.env.PRIVATE_KEY ||

@@ -8,8 +8,9 @@
     "dev": "run-p dev:*",
     "dev:compile-contract": "yarn workspace contracts compile",
     "dev:run-localchain": "yarn workspace contracts localchain",
-    "dev:deploy-contract-to-localchain": "wait-on http://localhost:8545 && yarn workspace contracts deploy --export-all ../frontend/src/contracts/hardhat_contracts.json",
-    "dev:frontend": "wait-on http://localhost:8545 && yarn workspace frontend start"
+    "dev:deploy-contract-to-localchain": "wait-on http://localhost:8545 && yarn workspace contracts deploy",
+    "dev:frontend": "wait-on http://localhost:8545 && yarn workspace frontend start",
+    "faucet": "yarn workspace contracts faucet"
   },
   "keywords": [],
   "author": "",

@@ -7,7 +7,8 @@
     "test": "hardhat test",
     "compile": "hardhat compile",
     "localchain": "hardhat node",
-    "deploy": "hardhat deploy --network localhost"
+    "deploy": "hardhat deploy --network localhost",
+    "faucet": "hardhat --network localhost faucet"
   },
   "keywords": [],
   "author": "",
