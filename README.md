@@ -19,10 +19,12 @@ $ yarn install
 $ mv packages/contracts/.hardhat.config.js packages/contracts/hardhat.config.js
 ```
 
-- Edit `packages/contracts/deploy/.deploy.js` to `packages/contracts/deploy/deploy.js`. And add settings of Contracts.
+- Edit `packages/contracts/scripts/.create-deploy.js` to `packages/contracts/scripts/create-deploy.js`. And add settings of Contracts.
+- Edit `packages/contracts/scripts/.update-deploy.js` to `packages/contracts/scripts/update-deploy.js`. And add settings of Contracts.
 
 ```shell
-$ mv packages/contracts/deploy/.deploy.js packages/contracts/deploy/deploy.js
+$ mv packages/contracts/scripts/.create-deploy.js packages/contracts/scripts/create-deploy.js
+$ mv packages/contracts/scripts/.update-deploy.js packages/contracts/scripts/update-deploy.js
 ```
 
 ### Set up frontend/
@@ -52,7 +54,20 @@ $ yarn dev
 $ yarn faucet YOUR_LOCAL_WALLET_ADDRESS
 ```
 
-## Trouble Shooting
+### Update a contract
+
+With [Upgrading smart contracts](https://docs.openzeppelin.com/learn/upgrading-smart-contracts) pattern, it's possible to update the contract with the state unchanged.
+
+- Copy `packages/contracts/contracts/Greeter.sol` to `packages/contracts/contracts/GreeterV002.sol`
+- Edit `packages/contracts/contracts/GreeterV002.sol`
+- If you want to add or modify codes, create `packages/contracts/contracts/GreeterV003.sol` and do the same things.
+- And run the below command,
+
+```shell
+$ yarn deploy-update
+```
+
+## TroubleShooting
 
 ### Error of `Received invalid block tag 2. Latest block number is 1`
 

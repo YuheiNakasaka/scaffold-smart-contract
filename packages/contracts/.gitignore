@@ -5,7 +5,9 @@ node_modules
 cache
 artifacts
 hardhat.config.js
-deploy/deploy.js
+scripts/create-deploy.js
+scripts/update-deploy.js
 deployments/*
 !deployments/.keep
 .DS_Store
+.openzeppelin

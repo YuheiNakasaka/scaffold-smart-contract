@@ -1,5 +1,6 @@
 require("@nomiclabs/hardhat-waffle");
-require("hardhat-deploy");
+require("@nomiclabs/hardhat-ethers");
+require("@openzeppelin/hardhat-upgrades");
 require("./tasks/faucet");
 
 const privateKey =
@@ -18,7 +19,7 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
  * @type import('hardhat/config').HardhatUserConfig
  */
 module.exports = {
-  solidity: "0.8.0",
+  solidity: "0.8.3",
   namedAccounts: {
     deployer: 0,
   },

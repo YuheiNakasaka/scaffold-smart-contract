@@ -10,6 +10,7 @@
     "dev:run-localchain": "yarn workspace contracts localchain",
     "dev:deploy-contract-to-localchain": "wait-on http://localhost:8545 && yarn workspace contracts deploy",
     "dev:frontend": "wait-on http://localhost:8545 && yarn workspace frontend start",
+    "deploy-update": "yarn workspace contracts deploy-update",
     "faucet": "yarn workspace contracts faucet"
   },
   "keywords": [],

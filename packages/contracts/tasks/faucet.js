@@ -17,7 +17,7 @@ task("faucet", "Sends ETH and tokens to an address")
     const [sender] = await ethers.getSigners();
     const tx = await sender.sendTransaction({
       to: receiver,
-      value: ethers.constants.WeiPerEther,
+      value: ethers.constants.WeiPerEther.mul(10),
     });
     await tx.wait();
 
